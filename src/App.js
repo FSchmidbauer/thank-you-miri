@@ -1,50 +1,53 @@
 //import PropTypes from 'prop-types';
-import styled from 'styled-components/macro';
-import Table from './images/school-desk-flat.svg';
-import MagicStick from './images/zauberstab.png';
-import Computer from './images/computer.png';
-import MiriamHanle from './images/MiriamHanle.png';
-import Witch from './images/witch.png';
-import Bejan from './images/bejan.png';
-import Borjan from './images/borjan.png';
-import Farah from './images/farah.png';
-import Felix from './images/felix.png';
-import Flo from './images/flo.png';
-import Gabi from './images/gabi.png';
-import Helena from './images/helena.png';
-import Jens from './images/jens.png';
-import Lukas from './images/lukas.png';
-import Matthias from './images/matthias.png';
-import OlliG from './images/ollig.png';
-import OlliN from './images/ollin.png';
-import Sabrina from './images/sabrina.png';
-import Sacid from './images/sacid.png';
-import Sharine from './images/sharine.png';
-import Vika from './images/vika.png';
+import { useState } from "react";
+import styled from "styled-components/macro";
+import Table from "./images/school-desk-flat.svg";
+import MagicStick from "./images/zauberstab.png";
+import Computer from "./images/computer.png";
+import Witch from "./images/witch.png";
+import Bejan from "./images/bejan.png";
+import Borjan from "./images/borjan.png";
+import Farah from "./images/farah.png";
+import Felix from "./images/felix.png";
+import Flo from "./images/flo.png";
+import Gabi from "./images/gabi.png";
+import Helena from "./images/helena.png";
+import Jens from "./images/jens.png";
+import Lukas from "./images/lukas.png";
+import Matthias from "./images/matthias.png";
+import OlliG from "./images/ollig.png";
+import OlliN from "./images/ollin.png";
+import Sabrina from "./images/sabrina.png";
+import Sacid from "./images/sacid.png";
+import Sharine from "./images/sharine.png";
+import Vika from "./images/vika.png";
 
 export default function App() {
   const badCopSpells = [
-    { spell: 'Wir sind nicht hier um einen Designpreis zu gewinnen.' },
-    { spell: 'GIB DOCH EINFACH NE PROP REIN!' },
-    { spell: 'Wir arbeiten übrigens auch am Feiertag.' },
-    { spell: 'So wer will jetzt die Hausaufgabe zeigen?' },
-    { spell: 'Guten Morgen alle zusammen.' },
-    { spell: 'Catch them all.' },
-    { spell: 'Dazu nehmen wir jetzt mal ein div.' },
-    { spell: 'Florians Zusatzaufgabe alles in Bundesligavereine umbauen.' },
-    { spell: 'Ne Ne 30 Minuten reichen schon.' },
+    { spell: "Wir sind nicht hier, um einen Designpreis zu gewinnen!" },
+    { spell: "THOMAS, GIB DOCH EINFACH NE PROP REIN!" },
+    { spell: "Der Feiertag ist für Euch gestrichen, wir arbeiten natürlich!" },
+    { spell: "So, wer will jetzt die Hausaufgabe zeigen?" },
+    { spell: "Guten Morgen alle zusammen." },
+    { spell: "Catch them all!" },
+    { spell: "Dazu nehmen wir jetzt mal ein div." },
+    { spell: "Florians Zusatzaufgabe: Alles in Bundesligavereine umbauen!" },
+    { spell: "Ne ne, 10 Minuten für die Aufgabe reichen locker!" },
+    { spell: "Thomas, lösch' mal alles raus bitte!" },
   ];
-  //const [spells, setSpells] = useState([]);
+
+  const [actualSpell, setActualSpell] = useState([]);
 
   function showSpells() {
-    const mapSpells = badCopSpells.map(() => <p>{badCopSpells.spell}</p>);
-    console.log(mapSpells);
+    const randomIndex = Math.floor(Math.random() * badCopSpells.length);
+    const newSpell = badCopSpells.sort((element) => 0.5 - Math.random());
+    setActualSpell([newSpell[randomIndex]]);
   }
 
   return (
     <section>
       <Header>
-        <h1>Thank you Coach Miriam</h1>
+        <h1>Thank you Bad Coach Miriam</h1>
       </Header>
       <main>
         <ImageSection>
@@ -253,14 +256,17 @@ export default function App() {
           />
         </ImageSection>
         <BadCoachSection>
-          <Zauberspruch>{showSpells}</Zauberspruch>
+          <Zauberspruch>
+            {actualSpell.map((element) => (
+              <SpellSpace>"{element.spell}"</SpellSpace>
+            ))}
+          </Zauberspruch>
           <Zauberstab
             src={MagicStick}
             alt="zauberstab"
             onClick={() => showSpells()}
           />
-          <Witchimage width="100" height="100" src={Witch} alt="witch" />
-          <Miriamimage width="100" height="100" src={MiriamHanle} alt="miri" />
+          <Witchimage src={Witch} alt="witch" />
         </BadCoachSection>
       </main>
       <Footer>© by Florian Schmidbauer und Oliver Neuhäusler</Footer>
@@ -282,7 +288,7 @@ const ImageSection = styled.section`
   row-gap: 5rem;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  padding: 7rem 4rem 2rem;
+  padding: 7rem 4rem 0rem;
   place-items: center;
 `;
 
@@ -591,37 +597,40 @@ const SchooldeskVika = styled.img`
 `;
 
 const BadCoachSection = styled.section`
-  display: flex;
-  justify-content: space-around;
-  padding: 2rem 0rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+  padding: 0 3rem;
+  margin-top: -5rem;
 `;
 
 const Zauberspruch = styled.p`
+grid-column: 1;
   border: 0.2rem groove darkviolet;
   border-radius: 1rem;
   background: ivory;
-  padding: 3rem;
   text-align: center;
   font-family: fantasy;
   font-weight: bold;
+  width: 30rem;
+  height: 10rem;
 }
 `;
 
-const Miriamimage = styled.img`
-  transform: translate(-15.4rem, -0.3rem) rotate(-9deg);
-  z-index: 10;
+const SpellSpace = styled.p`
+  font-size: 1rem;
+  padding: 3.5rem 2rem 0;
 `;
 
 const Witchimage = styled.img`
+  grid-column: 3;
   border: 0.2rem groove darkviolet;
-  transform: scale(2);
   border-radius: 3rem;
+  width: 90%;
 `;
 
 const Zauberstab = styled.img`
-  transform: scale(2);
-  width: 100px;
-  height: 100px;
+  grid-column: 2;
   :hover {
     cursor: pointer;
     animation: shake 0.5s;
