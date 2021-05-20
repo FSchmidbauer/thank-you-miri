@@ -1,38 +1,38 @@
 //import PropTypes from 'prop-types';
-import { useState } from "react";
-import styled from "styled-components/macro";
-import Table from "./images/school-desk-flat.svg";
-import MagicStick from "./images/zauberstab.png";
-import Computer from "./images/computer.png";
-import Witch from "./images/witch.png";
-import Bejan from "./images/bejan.png";
-import Borjan from "./images/borjan.png";
-import Farah from "./images/farah.png";
-import Felix from "./images/felix.png";
-import Flo from "./images/flo.png";
-import Gabi from "./images/gabi.png";
-import Helena from "./images/helena.png";
-import Jens from "./images/jens.png";
-import Lukas from "./images/lukas.png";
-import Matthias from "./images/matthias.png";
-import OlliG from "./images/ollig.png";
-import OlliN from "./images/ollin.png";
-import Sabrina from "./images/sabrina.png";
-import Sacid from "./images/sacid.png";
-import Sharine from "./images/sharine.png";
-import Vika from "./images/vika.png";
+import { useState } from 'react';
+import styled from 'styled-components/macro';
+import Table from './images/school-desk-flat.svg';
+import MagicStick from './images/zauberstab.png';
+import Computer from './images/computer.png';
+import Witch from './images/witch.png';
+import Bejan from './images/bejan.png';
+import Borjan from './images/borjan.png';
+import Farah from './images/farah.png';
+import Felix from './images/felix.png';
+import Flo from './images/flo.png';
+import Gabi from './images/gabi.png';
+import Helena from './images/helena.png';
+import Jens from './images/jens.png';
+import Lukas from './images/lukas.png';
+import Matthias from './images/matthias.png';
+import OlliG from './images/ollig.png';
+import OlliN from './images/ollin.png';
+import Sabrina from './images/sabrina.png';
+import Sacid from './images/sacid.png';
+import Sharine from './images/sharine.png';
+import Vika from './images/vika.png';
 
 export default function App() {
   const badCopSpells = [
-    { spell: "Wir sind nicht hier, um einen Designpreis zu gewinnen!" },
-    { spell: "THOMAS, GIB DOCH EINFACH NE PROP REIN!" },
-    { spell: "Der Feiertag ist für Euch gestrichen, wir arbeiten natürlich!" },
-    { spell: "So, wer will jetzt die Hausaufgabe zeigen?" },
-    { spell: "Guten Morgen alle zusammen." },
-    { spell: "Catch them all!" },
-    { spell: "Dazu nehmen wir jetzt mal ein div." },
-    { spell: "Florians Zusatzaufgabe: Alles in Bundesligavereine umbauen!" },
-    { spell: "Ne ne, 10 Minuten für die Aufgabe reichen locker!" },
+    { spell: 'Wir sind nicht hier, um einen Designpreis zu gewinnen!' },
+    { spell: 'THOMAS, GIB DOCH EINFACH NE PROP REIN!' },
+    { spell: 'Der Feiertag ist für Euch gestrichen, wir arbeiten natürlich!' },
+    { spell: 'So, wer will jetzt die Hausaufgabe zeigen?' },
+    { spell: 'Guten Morgen alle zusammen.' },
+    { spell: 'Catch them all!' },
+    { spell: 'Dazu nehmen wir jetzt mal ein div.' },
+    { spell: 'Florians Zusatzaufgabe: Alles in Bundesligavereine umbauen!' },
+    { spell: 'Ne ne, 10 Minuten für die Aufgabe reichen locker!' },
     { spell: "Thomas, lösch' mal alles raus bitte!" },
   ];
 
@@ -600,11 +600,11 @@ const BadCoachSection = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   place-items: center;
-  padding: 0 3rem;
+  padding: 100px 3rem 50px;
   margin-top: -5rem;
 `;
 
-const Zauberspruch = styled.p`
+const Zauberspruch = styled.article`
 grid-column: 1;
   border: 0.2rem groove darkviolet;
   border-radius: 1rem;
@@ -631,6 +631,8 @@ const Witchimage = styled.img`
 
 const Zauberstab = styled.img`
   grid-column: 2;
+  width: 200px;
+  height: 200px;
   :hover {
     cursor: pointer;
     animation: shake 0.5s;
