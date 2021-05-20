@@ -21,6 +21,11 @@ import Sabrina from './images/sabrina.png';
 import Sacid from './images/sacid.png';
 import Sharine from './images/sharine.png';
 import Vika from './images/vika.png';
+import BildschirmFlo from './images/bildschirm_flo.png';
+import Undefined from './images/undefined.png';
+import Pokemon from './images/pokemon.png';
+import Blackscreen from './images/blackscreen.png';
+import { element } from 'prop-types';
 
 export default function App() {
   const badCopSpells = [
@@ -37,20 +42,328 @@ export default function App() {
   ];
 
   const [actualSpell, setActualSpell] = useState([]);
+  const [isBildschirmFlo, setIsBildschirmFlo] = useState(false);
+  const [isUndefined, setIsUndefined] = useState(false);
+  const [isPokemon, setIsPokemon] = useState(false);
+  const [isDeleted, setIsDeleted] = useState(false);
 
   function showSpells() {
     const randomIndex = Math.floor(Math.random() * badCopSpells.length);
     const newSpell = badCopSpells.sort((element) => 0.5 - Math.random());
     setActualSpell([newSpell[randomIndex]]);
+    if (actualSpell) {
+      setIsDeleted(true);
+    } else {
+      setIsDeleted(false);
+    }
   }
+
+  console.log(actualSpell);
 
   return (
     <section>
       <Header>
         <h1>Thank you Bad Coach Miriam</h1>
       </Header>
+      {isDeleted && <main></main>}
       <main>
         <ImageSection>
+          {isPokemon && (
+            <Pokemon1 width="80" height="65" src={Pokemon} alt="pokemon" />
+          )}
+          {isPokemon && (
+            <Pokemon2 width="80" height="65" src={Pokemon} alt="pokemon" />
+          )}
+          {isPokemon && (
+            <Pokemon3 width="80" height="65" src={Pokemon} alt="pokemon" />
+          )}
+          {isPokemon && (
+            <Pokemon4 width="80" height="65" src={Pokemon} alt="pokemon" />
+          )}
+          {isPokemon && (
+            <Pokemon5 width="80" height="65" src={Pokemon} alt="pokemon" />
+          )}
+          {isPokemon && (
+            <Pokemon6 width="80" height="65" src={Pokemon} alt="pokemon" />
+          )}
+          {isPokemon && (
+            <Pokemon7 width="80" height="65" src={Pokemon} alt="pokemon" />
+          )}
+          {isPokemon && (
+            <Pokemon8 width="80" height="65" src={Pokemon} alt="pokemon" />
+          )}
+          {isPokemon && (
+            <Pokemon9 width="80" height="65" src={Pokemon} alt="pokemon" />
+          )}
+          {isPokemon && (
+            <Pokemon10 width="80" height="65" src={Pokemon} alt="pokemon" />
+          )}
+          {isPokemon && (
+            <Pokemon11 width="80" height="65" src={Pokemon} alt="pokemon" />
+          )}
+          {isPokemon && (
+            <Pokemon12 width="80" height="65" src={Pokemon} alt="pokemon" />
+          )}
+          {isPokemon && (
+            <Pokemon13 width="80" height="65" src={Pokemon} alt="pokemon" />
+          )}
+          {isPokemon && (
+            <Pokemon14 width="80" height="65" src={Pokemon} alt="pokemon" />
+          )}
+          {isPokemon && (
+            <Pokemon15 width="80" height="65" src={Pokemon} alt="pokemon" />
+          )}
+          {isPokemon && (
+            <Pokemon16 width="80" height="65" src={Pokemon} alt="pokemon" />
+          )}
+          {isUndefined && (
+            <Undefined1
+              width="80"
+              height="65"
+              src={Undefined}
+              alt="Undefined"
+            />
+          )}
+          {isUndefined && (
+            <Undefined2
+              width="80"
+              height="65"
+              src={Undefined}
+              alt="Undefined"
+            />
+          )}
+          {isUndefined && (
+            <Undefined3
+              width="80"
+              height="65"
+              src={Undefined}
+              alt="Undefined"
+            />
+          )}
+          {isUndefined && (
+            <Undefined4
+              width="80"
+              height="65"
+              src={Undefined}
+              alt="Undefined"
+            />
+          )}
+          {isUndefined && (
+            <Undefined5
+              width="80"
+              height="65"
+              src={Undefined}
+              alt="Undefined"
+            />
+          )}
+          {isUndefined && (
+            <Undefined6
+              width="80"
+              height="65"
+              src={Undefined}
+              alt="Undefined"
+            />
+          )}
+          {isUndefined && (
+            <Undefined7
+              width="80"
+              height="65"
+              src={Undefined}
+              alt="Undefined"
+            />
+          )}
+          {isUndefined && (
+            <Undefined8
+              width="80"
+              height="65"
+              src={Undefined}
+              alt="Undefined"
+            />
+          )}
+          {isUndefined && (
+            <Undefined9
+              width="80"
+              height="65"
+              src={Undefined}
+              alt="Undefined"
+            />
+          )}
+          {isUndefined && (
+            <Undefined10
+              width="80"
+              height="65"
+              src={Undefined}
+              alt="Undefined"
+            />
+          )}
+          {isUndefined && (
+            <Undefined11
+              width="80"
+              height="65"
+              src={Undefined}
+              alt="Undefined"
+            />
+          )}
+          {isUndefined && (
+            <Undefined12
+              width="80"
+              height="65"
+              src={Undefined}
+              alt="Undefined"
+            />
+          )}
+          {isUndefined && (
+            <Undefined13
+              width="80"
+              height="65"
+              src={Undefined}
+              alt="Undefined"
+            />
+          )}
+          {isUndefined && (
+            <Undefined15
+              width="80"
+              height="65"
+              src={Undefined}
+              alt="Undefined"
+            />
+          )}
+          {isUndefined && (
+            <Undefined16
+              width="80"
+              height="65"
+              src={Undefined}
+              alt="Undefined"
+            />
+          )}
+          {isBildschirmFlo && (
+            <BildschirmFlo1
+              width="80"
+              height="65"
+              src={BildschirmFlo}
+              alt="bildschirmflo"
+            />
+          )}
+          {isBildschirmFlo && (
+            <BildschirmFlo2
+              width="80"
+              height="65"
+              src={BildschirmFlo}
+              alt="bildschirmflo"
+            />
+          )}
+          {isBildschirmFlo && (
+            <BildschirmFlo3
+              width="80"
+              height="65"
+              src={BildschirmFlo}
+              alt="bildschirmflo"
+            />
+          )}
+          {isBildschirmFlo && (
+            <BildschirmFlo4
+              width="80"
+              height="65"
+              src={BildschirmFlo}
+              alt="bildschirmflo"
+            />
+          )}
+          {isBildschirmFlo && (
+            <BildschirmFlo5
+              width="80"
+              height="65"
+              src={BildschirmFlo}
+              alt="bildschirmflo"
+            />
+          )}
+          {isBildschirmFlo && (
+            <BildschirmFlo6
+              width="80"
+              height="65"
+              src={BildschirmFlo}
+              alt="bildschirmflo"
+            />
+          )}
+          {isBildschirmFlo && (
+            <BildschirmFlo7
+              width="80"
+              height="65"
+              src={BildschirmFlo}
+              alt="bildschirmflo"
+            />
+          )}
+          {isBildschirmFlo && (
+            <BildschirmFlo8
+              width="80"
+              height="65"
+              src={BildschirmFlo}
+              alt="bildschirmflo"
+            />
+          )}
+          {isBildschirmFlo && (
+            <BildschirmFlo9
+              width="80"
+              height="65"
+              src={BildschirmFlo}
+              alt="bildschirmflo"
+            />
+          )}
+          {isBildschirmFlo && (
+            <BildschirmFlo10
+              width="80"
+              height="65"
+              src={BildschirmFlo}
+              alt="bildschirmflo"
+            />
+          )}
+          {isBildschirmFlo && (
+            <BildschirmFlo11
+              width="80"
+              height="65"
+              src={BildschirmFlo}
+              alt="bildschirmflo"
+            />
+          )}
+          {isBildschirmFlo && (
+            <BildschirmFlo12
+              width="80"
+              height="65"
+              src={BildschirmFlo}
+              alt="bildschirmflo"
+            />
+          )}
+          {isBildschirmFlo && (
+            <BildschirmFlo13
+              width="80"
+              height="65"
+              src={BildschirmFlo}
+              alt="bildschirmflo"
+            />
+          )}
+          {isBildschirmFlo && (
+            <BildschirmFlo14
+              width="80"
+              height="65"
+              src={BildschirmFlo}
+              alt="bildschirmflo"
+            />
+          )}
+          {isBildschirmFlo && (
+            <BildschirmFlo15
+              width="80"
+              height="65"
+              src={BildschirmFlo}
+              alt="bildschirmflo"
+            />
+          )}
+          {isBildschirmFlo && (
+            <BildschirmFlo16
+              width="80"
+              height="65"
+              src={BildschirmFlo}
+              alt="bildschirmflo"
+            />
+          )}
           <ImageBejan width="80" height="65" src={Bejan} alt="bejan" />
           <ImageBorjan width="80" height="65" src={Borjan} alt="borjan" />
           <ImageFarah width="80" height="65" src={Farah} alt="farah" />
@@ -255,20 +568,20 @@ export default function App() {
             alt="schooldesk"
           />
         </ImageSection>
-        <BadCoachSection>
-          <Zauberspruch>
-            {actualSpell.map((element) => (
-              <SpellSpace>"{element.spell}"</SpellSpace>
-            ))}
-          </Zauberspruch>
-          <Zauberstab
-            src={MagicStick}
-            alt="zauberstab"
-            onClick={() => showSpells()}
-          />
-          <Witchimage src={Witch} alt="witch" />
-        </BadCoachSection>
       </main>
+      <BadCoachSection>
+        <Zauberspruch>
+          {actualSpell.map((element) => (
+            <SpellSpace>"{element.spell}"</SpellSpace>
+          ))}
+        </Zauberspruch>
+        <Zauberstab
+          src={MagicStick}
+          alt="zauberstab"
+          onClick={() => showSpells()}
+        />
+        <Witchimage src={Witch} alt="witch" />
+      </BadCoachSection>
       <Footer>© by Florian Schmidbauer und Oliver Neuhäusler</Footer>
     </section>
   );
@@ -589,6 +902,382 @@ const ComputerVika = styled.img`
   transform: translate(0rem, -6rem);
   grid-column: 8;
   grid-row: 2;
+`;
+
+const BildschirmFlo1 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 1;
+  grid-row: 1;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const BildschirmFlo2 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 2;
+  grid-row: 1;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const BildschirmFlo3 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 3;
+  grid-row: 1;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const BildschirmFlo4 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 4;
+  grid-row: 1;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const BildschirmFlo5 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 5;
+  grid-row: 1;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const BildschirmFlo6 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 6;
+  grid-row: 1;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const BildschirmFlo7 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 7;
+  grid-row: 1;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const BildschirmFlo8 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 8;
+  grid-row: 1;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const BildschirmFlo9 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 1;
+  grid-row: 2;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const BildschirmFlo10 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 2;
+  grid-row: 2;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const BildschirmFlo11 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 3;
+  grid-row: 2;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const BildschirmFlo12 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 4;
+  grid-row: 2;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const BildschirmFlo13 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 5;
+  grid-row: 2;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const BildschirmFlo14 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 6;
+  grid-row: 2;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const BildschirmFlo15 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 7;
+  grid-row: 2;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const BildschirmFlo16 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 8;
+  grid-row: 2;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const Undefined1 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 1;
+  grid-row: 1;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const Undefined2 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 2;
+  grid-row: 1;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const Undefined3 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 3;
+  grid-row: 1;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const Undefined4 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 4;
+  grid-row: 1;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const Undefined5 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 5;
+  grid-row: 1;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const Undefined6 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 6;
+  grid-row: 1;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const Undefined7 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 7;
+  grid-row: 1;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const Undefined8 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 8;
+  grid-row: 1;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const Undefined9 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 1;
+  grid-row: 2;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const Undefined10 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 2;
+  grid-row: 2;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const Undefined11 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 3;
+  grid-row: 2;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const Undefined12 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 4;
+  grid-row: 2;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const Undefined13 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 5;
+  grid-row: 2;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const Undefined15 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 7;
+  grid-row: 2;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const Undefined16 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 8;
+  grid-row: 2;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const Pokemon1 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 1;
+  grid-row: 1;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const Pokemon2 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 2;
+  grid-row: 1;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const Pokemon3 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 3;
+  grid-row: 1;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const Pokemon4 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 4;
+  grid-row: 1;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const Pokemon5 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 5;
+  grid-row: 1;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const Pokemon6 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 6;
+  grid-row: 1;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const Pokemon7 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 7;
+  grid-row: 1;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const Pokemon8 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 8;
+  grid-row: 1;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const Pokemon9 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 1;
+  grid-row: 2;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const Pokemon10 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 2;
+  grid-row: 2;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const Pokemon11 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 3;
+  grid-row: 2;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const Pokemon12 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 4;
+  grid-row: 2;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const Pokemon13 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 5;
+  grid-row: 2;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const Pokemon14 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 6;
+  grid-row: 2;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const Pokemon15 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 7;
+  grid-row: 2;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const Pokemon16 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 8;
+  grid-row: 2;
+  z-index: 20;
+  border-radius: 0.5rem;
 `;
 
 const SchooldeskVika = styled.img`
