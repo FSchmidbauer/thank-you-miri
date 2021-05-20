@@ -25,20 +25,18 @@ import BildschirmFlo from './images/bildschirm_flo.png';
 import Undefined from './images/undefined.png';
 import Pokemon from './images/pokemon.png';
 import Blackscreen from './images/blackscreen.png';
-import { element } from 'prop-types';
 
 export default function App() {
   const badCopSpells = [
-    { spell: 'Wir sind nicht hier, um einen Designpreis zu gewinnen!' },
-    { spell: 'THOMAS, GIB DOCH EINFACH NE PROP REIN!' },
-    { spell: 'Der Feiertag ist für Euch gestrichen, wir arbeiten natürlich!' },
-    { spell: 'So, wer will jetzt die Hausaufgabe zeigen?' },
-    { spell: 'Guten Morgen alle zusammen.' },
-    { spell: 'Catch them all!' },
-    { spell: 'Dazu nehmen wir jetzt mal ein div.' },
-    { spell: 'Florians Zusatzaufgabe: Alles in Bundesligavereine umbauen!' },
-    { spell: 'Ne ne, 10 Minuten für die Aufgabe reichen locker!' },
-    { spell: "Thomas, lösch' mal alles raus bitte!" },
+    'Wir sind nicht hier, um einen Designpreis zu gewinnen!',
+    'Der Feiertag ist für Euch gestrichen, wir arbeiten natürlich!',
+    'So, wer will jetzt die Hausaufgabe zeigen?',
+    'Guten Morgen alle zusammen.',
+    'Catch them all!',
+    'Dazu nehmen wir jetzt mal ein div.',
+    'Florians Zusatzaufgabe: Alles in Bundesligavereine umbauen!',
+    'Ne ne, 10 Minuten für die Aufgabe reichen locker!',
+    "Thomas, lösch' mal alles raus bitte!",
   ];
 
   const [actualSpell, setActualSpell] = useState([]);
@@ -46,26 +44,82 @@ export default function App() {
   const [isUndefined, setIsUndefined] = useState(false);
   const [isPokemon, setIsPokemon] = useState(false);
   const [isDeleted, setIsDeleted] = useState(false);
+  const [isScream, setIsScream] = useState(false);
+  const [isFootball, setIsFootball] = useState(false);
+  const [isFlame, setIsFlame] = useState(false);
+  const [isHotpink, setIsHotpink] = useState(false);
 
   function showSpells() {
     const randomIndex = Math.floor(Math.random() * badCopSpells.length);
     const newSpell = badCopSpells.sort((element) => 0.5 - Math.random());
     setActualSpell([newSpell[randomIndex]]);
-    if (actualSpell) {
+
+    if (actualSpell.includes('Catch them all!')) {
+      setIsPokemon(true);
+    } else {
+      setIsPokemon(false);
+    }
+    if (actualSpell.includes('So, wer will jetzt die Hausaufgabe zeigen?')) {
+      setIsUndefined(true);
+    } else {
+      setIsUndefined(false);
+    }
+    if (actualSpell.includes('Guten Morgen alle zusammen.')) {
+      setIsBildschirmFlo(true);
+    } else {
+      setIsBildschirmFlo(false);
+    }
+    if (actualSpell.includes("Thomas, lösch' mal alles raus bitte!")) {
       setIsDeleted(true);
     } else {
       setIsDeleted(false);
     }
+    if (
+      actualSpell.includes('Ne ne, 10 Minuten für die Aufgabe reichen locker!')
+    ) {
+      setIsScream(true);
+    } else {
+      setIsScream(false);
+    }
+    if (
+      actualSpell.includes(
+        'Florians Zusatzaufgabe: Alles in Bundesligavereine umbauen!'
+      )
+    ) {
+      setIsFootball(true);
+    } else {
+      setIsFootball(false);
+    }
+    if (actualSpell.includes('Dazu nehmen wir jetzt mal ein div.')) {
+      setIsFlame(true);
+    } else {
+      setIsFlame(false);
+    }
+    if (
+      actualSpell.includes(
+        'Der Feiertag ist für Euch gestrichen, wir arbeiten natürlich!'
+      )
+    ) {
+      setIsScream(true);
+    } else {
+      setIsScream(false);
+    }
+    if (
+      actualSpell.includes(
+        'Wir sind nicht hier, um einen Designpreis zu gewinnen!'
+      )
+    ) {
+      setIsHotpink(true);
+    } else {
+      setIsHotpink(false);
+    }
   }
-
-  console.log(actualSpell);
 
   return (
     <section>
       <Header>
         <h1>Thank you Bad Coach Miriam</h1>
       </Header>
-      {isDeleted && <main></main>}
       <main>
         <ImageSection>
           {isPokemon && (
@@ -572,7 +626,7 @@ export default function App() {
       <BadCoachSection>
         <Zauberspruch>
           {actualSpell.map((element) => (
-            <SpellSpace>"{element.spell}"</SpellSpace>
+            <SpellSpace>"{element}"</SpellSpace>
           ))}
         </Zauberspruch>
         <Zauberstab
