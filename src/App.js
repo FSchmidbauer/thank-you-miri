@@ -21,6 +21,8 @@ import Sabrina from "./images/sabrina.png";
 import Sacid from "./images/sacid.png";
 import Sharine from "./images/sharine.png";
 import Vika from "./images/vika.png";
+import BildschirmFlo from "./images/bildschirm_flo.png";
+import { element } from "prop-types";
 
 export default function App() {
   const badCopSpells = [
@@ -37,12 +39,23 @@ export default function App() {
   ];
 
   const [actualSpell, setActualSpell] = useState([]);
+  const [isActive, setIsActive] = useState(false);
 
   function showSpells() {
     const randomIndex = Math.floor(Math.random() * badCopSpells.length);
     const newSpell = badCopSpells.sort((element) => 0.5 - Math.random());
     setActualSpell([newSpell[randomIndex]]);
+    if (
+      (actualSpell, index) =>
+        actualSpell.index === "Guten Morgen alle zusammen."
+    ) {
+      setIsActive(true);
+    } else {
+      setIsActive(false);
+    }
   }
+
+  console.log(actualSpell);
 
   return (
     <section>
@@ -51,7 +64,23 @@ export default function App() {
       </Header>
       <main>
         <ImageSection>
+          {isActive && (
+            <BildschirmFlo1
+              width="80"
+              height="65"
+              src={BildschirmFlo}
+              alt="bildschirmflo"
+            />
+          )}
           <ImageBejan width="80" height="65" src={Bejan} alt="bejan" />
+          {isActive && (
+            <BildschirmFlo2
+              width="80"
+              height="65"
+              src={BildschirmFlo}
+              alt="bildschirmflo"
+            />
+          )}
           <ImageBorjan width="80" height="65" src={Borjan} alt="borjan" />
           <ImageFarah width="80" height="65" src={Farah} alt="farah" />
           <ImageFelix width="80" height="65" src={Felix} alt="felix" />
@@ -589,6 +618,22 @@ const ComputerVika = styled.img`
   transform: translate(0rem, -6rem);
   grid-column: 8;
   grid-row: 2;
+`;
+
+const BildschirmFlo1 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 1;
+  grid-row: 1;
+  z-index: 20;
+  border-radius: 0.5rem;
+`;
+
+const BildschirmFlo2 = styled.img`
+  transform: translate(0rem, -6.65rem);
+  grid-column: 2;
+  grid-row: 1;
+  z-index: 20;
+  border-radius: 0.5rem;
 `;
 
 const SchooldeskVika = styled.img`
