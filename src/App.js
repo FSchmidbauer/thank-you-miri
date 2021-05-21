@@ -1,48 +1,48 @@
 //import PropTypes from 'prop-types';
-import { useState } from "react";
-import useSound from "use-sound";
-import Soundtrack from "./harrypotter.mp3";
-import styled from "styled-components/macro";
-import Table from "./images/school-desk-flat.svg";
-import MagicStick from "./images/zauberstab.png";
-import Computer from "./images/computer.png";
-import Witch from "./images/witch.png";
-import Bejan from "./images/bejan.png";
-import Borjan from "./images/borjan.png";
-import Farah from "./images/farah.png";
-import Felix from "./images/felix.png";
-import Flo from "./images/flo.png";
-import Gabi from "./images/gabi.png";
-import Helena from "./images/helena.png";
-import Jens from "./images/jens.png";
-import Lukas from "./images/lukas.png";
-import Matthias from "./images/matthias.png";
-import OlliG from "./images/ollig.png";
-import OlliN from "./images/ollin.png";
-import Sabrina from "./images/sabrina.png";
-import Sacid from "./images/sacid.png";
-import Sharine from "./images/sharine.png";
-import Vika from "./images/vika.png";
-import BildschirmFlo from "./images/bildschirm_flo.png";
-import Undefined from "./images/undefined.png";
-import Pokemon from "./images/pokemon.png";
-import Scream from "./images/scream.png";
-import Football from "./images/football.png";
-import Setfire from "./images/setfire.png";
-import Fire from "./images/fire.png";
-import Hotpink from "./images/hotpink.png";
-import Raven from "./images/thomas.png";
+import { useEffect, useState } from 'react';
+import useSound from 'use-sound';
+import Soundtrack from './harrypotter.mp3';
+import styled from 'styled-components/macro';
+import Table from './images/school-desk-flat.svg';
+import MagicStick from './images/zauberstab.png';
+import Computer from './images/computer.png';
+import Witch from './images/witch.png';
+import Bejan from './images/bejan.png';
+import Borjan from './images/borjan.png';
+import Farah from './images/farah.png';
+import Felix from './images/felix.png';
+import Flo from './images/flo.png';
+import Gabi from './images/gabi.png';
+import Helena from './images/helena.png';
+import Jens from './images/jens.png';
+import Lukas from './images/lukas.png';
+import Matthias from './images/matthias.png';
+import OlliG from './images/ollig.png';
+import OlliN from './images/ollin.png';
+import Sabrina from './images/sabrina.png';
+import Sacid from './images/sacid.png';
+import Sharine from './images/sharine.png';
+import Vika from './images/vika.png';
+import BildschirmFlo from './images/bildschirm_flo.png';
+import Undefined from './images/undefined.png';
+import Pokemon from './images/pokemon.png';
+import Scream from './images/scream.png';
+import Football from './images/football.png';
+import Setfire from './images/setfire.png';
+import Fire from './images/fire.png';
+import Hotpink from './images/hotpink.png';
+import Raven from './images/thomas.png';
 
 export default function App() {
   const badCopSpells = [
-    "Wir sind nicht hier, um einen Designpreis zu gewinnen!",
-    "Der Feiertag ist für Euch gestrichen, wir arbeiten natürlich!",
-    "So, wer will jetzt die Hausaufgabe zeigen?",
-    "Guten Morgen alle zusammen.",
-    "Catch them all!",
-    "Dazu nehmen wir jetzt mal ein div.",
-    "Florians Zusatzaufgabe: Alles in Bundesligavereine umbauen!",
-    "Ne ne, 10 Minuten für die Aufgabe reichen locker!",
+    'Wir sind nicht hier, um einen Designpreis zu gewinnen!',
+    'Der Feiertag ist für Euch gestrichen, wir arbeiten natürlich!',
+    'So, wer will jetzt die Hausaufgabe zeigen?',
+    'Guten Morgen alle zusammen.',
+    'Catch them all!',
+    'Dazu nehmen wir jetzt mal ein div.',
+    'Florians Zusatzaufgabe: Alles in Bundesligavereine umbauen!',
+    'Ne ne, 10 Minuten für die Aufgabe reichen locker!',
     "Thomas, lösch' mal alles raus bitte!",
   ];
 
@@ -65,12 +65,8 @@ export default function App() {
   const [isFlame, setIsFlame] = useState(false);
   const [isHotpink, setIsHotpink] = useState(false);
 
-  function showSpells() {
-    const randomIndex = Math.floor(Math.random() * badCopSpells.length);
-    const newSpell = badCopSpells.sort((element) => 0.5 - Math.random());
-    setActualSpell([newSpell[randomIndex]]);
-
-    if (actualSpell.includes("Catch them all!")) {
+  useEffect(() => {
+    if (actualSpell.includes('Catch them all!')) {
       setIsPokemon(true);
       setIsBildschirmFlo(false);
       setIsUndefined(false);
@@ -80,7 +76,7 @@ export default function App() {
       setIsFlame(false);
       setIsHotpink(false);
     } else if (
-      actualSpell.includes("So, wer will jetzt die Hausaufgabe zeigen?")
+      actualSpell.includes('So, wer will jetzt die Hausaufgabe zeigen?')
     ) {
       setIsUndefined(true);
       setIsPokemon(false);
@@ -90,7 +86,7 @@ export default function App() {
       setIsFootball(false);
       setIsFlame(false);
       setIsHotpink(false);
-    } else if (actualSpell.includes("Guten Morgen alle zusammen.")) {
+    } else if (actualSpell.includes('Guten Morgen alle zusammen.')) {
       setIsBildschirmFlo(true);
       setIsUndefined(false);
       setIsPokemon(false);
@@ -109,7 +105,7 @@ export default function App() {
       setIsFlame(false);
       setIsHotpink(false);
     } else if (
-      actualSpell.includes("Ne ne, 10 Minuten für die Aufgabe reichen locker!")
+      actualSpell.includes('Ne ne, 10 Minuten für die Aufgabe reichen locker!')
     ) {
       setIsScream(true);
       setIsDeleted(false);
@@ -121,7 +117,7 @@ export default function App() {
       setIsHotpink(false);
     } else if (
       actualSpell.includes(
-        "Florians Zusatzaufgabe: Alles in Bundesligavereine umbauen!"
+        'Florians Zusatzaufgabe: Alles in Bundesligavereine umbauen!'
       )
     ) {
       setIsFootball(true);
@@ -132,7 +128,7 @@ export default function App() {
       setIsPokemon(false);
       setIsFlame(false);
       setIsHotpink(false);
-    } else if (actualSpell.includes("Dazu nehmen wir jetzt mal ein div.")) {
+    } else if (actualSpell.includes('Dazu nehmen wir jetzt mal ein div.')) {
       setIsFlame(true);
       setIsFootball(false);
       setIsScream(false);
@@ -143,7 +139,7 @@ export default function App() {
       setIsHotpink(false);
     } else if (
       actualSpell.includes(
-        "Der Feiertag ist für Euch gestrichen, wir arbeiten natürlich!"
+        'Der Feiertag ist für Euch gestrichen, wir arbeiten natürlich!'
       )
     ) {
       setIsScream(true);
@@ -156,7 +152,7 @@ export default function App() {
       setIsHotpink(false);
     } else if (
       actualSpell.includes(
-        "Wir sind nicht hier, um einen Designpreis zu gewinnen!"
+        'Wir sind nicht hier, um einen Designpreis zu gewinnen!'
       )
     ) {
       setIsHotpink(true);
@@ -168,6 +164,12 @@ export default function App() {
       setIsUndefined(false);
       setIsPokemon(false);
     }
+  }, [actualSpell]);
+
+  function showSpells() {
+    const randomIndex = Math.floor(Math.random() * badCopSpells.length);
+    const newSpell = badCopSpells.sort((element) => 0.5 - Math.random());
+    setActualSpell([newSpell[randomIndex]]);
   }
 
   return (
@@ -177,7 +179,7 @@ export default function App() {
         <SoundButton />
       </Header>
       {isDeleted ? (
-        ""
+        ''
       ) : (
         <main>
           <ImageSection>
@@ -357,11 +359,7 @@ export default function App() {
             <SpellSpace>"{element}"</SpellSpace>
           ))}
         </Zauberspruch>
-        <Zauberstab
-          src={MagicStick}
-          alt="zauberstab"
-          onClick={() => showSpells()}
-        />
+        <Zauberstab src={MagicStick} alt="zauberstab" onClick={showSpells} />
         {isFlame && <FireImage1 src={Fire} alt="Fire" />}
         {isFlame && <FireImage2 src={Fire} alt="Fire" />}
         <Witchimage src={Witch} alt="witch" />
