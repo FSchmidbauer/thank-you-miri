@@ -10,6 +10,5 @@ export default createGlobalStyle`
 
 body {
     background: WhiteSmoke;
-    padding-bottom: 3rem;
 }
 `;
